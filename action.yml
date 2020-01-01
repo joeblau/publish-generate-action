@@ -5,5 +5,5 @@ branding:
   icon: 'truck'
   color: 'orange'
 runs:
-  using: 'bash'
-  main: 'publish.sh'
+  using: 'docker'
+  image: 'Dockerfile'
