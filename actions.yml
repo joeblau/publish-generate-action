@@ -1,6 +1,0 @@
-name: 'Generate Publish Static Site'
-author: 'joeblau'
-description: 'GitHub Action for Generating a Publish Static Site'
-branding:
-  icon: 'truck'
-  color: 'orange'

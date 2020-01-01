@@ -1,5 +1,3 @@
-# Generate Publish Static Site
-
 A GitHub action for generating [Publish](https://github.com/JohnSundell/Publish) static sites that are hosted on GitHub.
 
 
@@ -43,25 +41,18 @@ A GitHub action for generating [Publish](https://github.com/JohnSundell/Publish)
       build-deploy:
         runs-on: ubuntu-latest
         steps:
-        - name: checkout
+        - name: Checkout
           uses: actions/checkout@v1
           
-        - name: install swift
+        - name: Install Swift
           uses: YOCKOW/Action-setup-swift@master
           with:
             swift-version: '5.1.2'
             
-        - name: install publish
-          run: |
-            git clone https://github.com/JohnSundell/Publish.git
-            cd Publish
-            swift build -c release
-            sudo install .build/release/publish-cli /usr/local/bin/publish
+        - name: Generate Publish Static Site
+          uses: joeblau/publish-generate-action@1.0.0
 
-        - name: generate site
-          run: publish generate
-
-        - name: deploy
+        - name: Deploy
           uses: peaceiris/actions-gh-pages@v2
           env:
             ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
