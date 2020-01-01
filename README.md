@@ -49,7 +49,7 @@ A GitHub action for generating [Publish](https://github.com/JohnSundell/Publish)
           with:
             swift-version: '5.1.2'
             
-        - name: Generate Publish Static Site
+        - name: Swift Publish Generate Static Site
           uses: joeblau/publish-generate-action@1.0.0
 
         - name: Deploy
