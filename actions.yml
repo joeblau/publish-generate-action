@@ -1,0 +1,11 @@
+name: 'Generate Publish Static Site'
+author: 'joeblau'
+description: 'GitHub Action for Generating a Publish Static Site'
+branding:
+  icon: 'truck'
+  color: 'orange'
+inputs:
+  swift-version:
+    description: 'The swift version to download (if necessary) and use. Example: 5.1.2'
+    required: false
+    default: '5.1.2'
