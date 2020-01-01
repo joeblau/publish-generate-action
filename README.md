@@ -27,8 +27,6 @@ A GitHub action for generating [Publish](https://github.com/JohnSundell/Publish)
 
 3. Add your workflow setting YAML file `.github/workflows/gh-pages.yml` and push to the default branch.
 
-    This is is a sample gh-pages yaml file
-
     ```yaml
     name: github pages
 
@@ -50,7 +48,7 @@ A GitHub action for generating [Publish](https://github.com/JohnSundell/Publish)
             swift-version: '5.1.2'
             
         - name: Swift Publish Generate Static Site
-          uses: joeblau/publish-generate-action@1.0.0
+          uses: joeblau/publish-generate-action@0.1.0
 
         - name: Deploy
           uses: peaceiris/actions-gh-pages@v2
