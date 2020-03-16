@@ -6,7 +6,7 @@ A GitHub action for generating [Publish](https://github.com/JohnSundell/Publish)
 1. Generate your deploy key with the following command.
 
     ```sh
-    ssh-keygen -t rsa -b 4096 -C "$(git config user.email)" -f gh-pages -N ""
+    ssh-keygen -o -a 100 -t ed25519 -C "$(git config user.email)" -f gh-pages -N ""
     # You will get 2 files:
     #   gh-pages.pub (public key)
     #   gh-pages     (private key)
@@ -14,12 +14,13 @@ A GitHub action for generating [Publish](https://github.com/JohnSundell/Publish)
 
 2. Add SSH deploy key on GitHub.com Go to **Repository Settings**
 
-    - Go to **Deploy Keys** and add your public key with the **Allow write access**
-    - Go to **Secrets** and add your private key as `ACTIONS_DEPLOY_KEY`
+    - Go to **Deploy Keys** and add your public key as `Public key of ACTIONS_DEPLOY_KEY` with **Allow write access** checked
 
     | Add your public key | Success |
     |---|---|
     | ![Add your public key](./.github/images/deploy-keys-1.jpg) | ![Success](./.github/images/deploy-keys-2.jpg) |
+
+    - Go to **Secrets** and add your public key as `ACTIONS_DEPLOY_KEY`
 
     | Add your private key | Success |
     |---|---|
