@@ -37,23 +37,19 @@ A GitHub action for generating [Publish](https://github.com/JohnSundell/Publish)
         - master
 
     jobs:
-      build-deploy:
+      gh-pages:
         runs-on: ubuntu-latest
+        container:
+          image: "swift:5.1"
         steps:
         - name: Checkout
           uses: actions/checkout@v1
-          
-        - name: Install Swift
-          uses: YOCKOW/Action-setup-swift@master
-          with:
-            swift-version: '5.1.2'
             
         - name: Build Publish
           run: |
             git clone https://github.com/JohnSundell/Publish.git
             cd Publish
-            swift build -c release
-            sudo install .build/release/publish-cli /usr/local/bin/publish
+            make
 
         - name: Generate Site
           run: publish generate
