@@ -40,7 +40,7 @@ A GitHub action for generating [Publish](https://github.com/JohnSundell/Publish)
       gh-pages:
         runs-on: ubuntu-latest
         container:
-          image: "swift:5.1"
+          image: "swift:5.2"
         steps:
         - name: Checkout
           uses: actions/checkout@v1
