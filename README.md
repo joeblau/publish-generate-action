@@ -20,7 +20,7 @@ A GitHub action for generating [Publish](https://github.com/JohnSundell/Publish)
     |---|---|
     | ![Add your public key](./.github/images/deploy-keys-1.jpg) | ![Success](./.github/images/deploy-keys-2.jpg) |
 
-    - Go to **Secrets** and add your public key as `ACTIONS_DEPLOY_KEY`
+    - Go to **Secrets** and add your private key as `ACTIONS_DEPLOY_KEY`
 
     | Add your private key | Success |
     |---|---|
@@ -40,7 +40,7 @@ A GitHub action for generating [Publish](https://github.com/JohnSundell/Publish)
       gh-pages:
         runs-on: ubuntu-latest
         container:
-          image: "swift:5.2"
+          image: "swift:5.4"
         steps:
         - name: Checkout
           uses: actions/checkout@v1
